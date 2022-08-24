@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
-import org.openqa.selenium.support.FindBy;
 
 
 public class BookOneWayFlight extends DriverSetUp {
@@ -14,10 +13,7 @@ public class BookOneWayFlight extends DriverSetUp {
     }
 
     By profileIcon = By.xpath("//div[@class='image flex-img d-flex align-items-center justify-content-center']");
-//    @FindBy(xpath = "//div[@class='image flex-img d-flex align-items-center justify-content-center']")
-//    WebElement profileIcon;
-
-    By signInIcon = By.xpath("//li[contains(text(),'Sign In')]");
+    By logInIcon = By.xpath("//li[normalize-space()='Log In']");
     By eMail = By.id("loginEmail");
     By passWord = By.id("loginPassword");
     By logInButton = By.xpath("//button[@type='submit']");
@@ -26,32 +22,28 @@ public class BookOneWayFlight extends DriverSetUp {
     By flyingToOneWayTab = By.xpath("//input[@class='form-control autocompleteyourdestination']");
     By selectDateOneWayTab = By.id("date_input");
     By rightArrowOneWayTab = By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root mdi mdi-chevron-right']");
-    By setDateOneWayTab = By.xpath("//td[@aria-label='Thursday, September 8, 2022']//div[@class='stdate']");
-
-    By increaseAdultOneWayTab = By.xpath("/html[1]/body[1]/div[6]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]");
-    By increaseChildOneWayTab = By.xpath("/html[1]/body[1]/div[6]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[2]");
-
-    By childBirthDateInputOneWayTab = By.xpath("/html[1]/body[1]/div[6]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/input[1]");
+    By setDateOneWayTab = By.xpath("//td[@aria-label='Monday, October 24, 2022']//span[@class='d'][normalize-space()='24']");
+    By increaseAdultOneWayTab = By.xpath("//body[1]/div[7]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]");
+    By increaseChildOneWayTab = By.xpath("//body[1]/div[7]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[2]/div[2]/button[2]");
+    By childBirthDateInputOneWayTab = By.xpath("//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl']");
     By childBirthMonthDropDownOneWayTab = By.xpath("//select[@class='react-datepicker__month-select']");
     By childBirthYearDropDownOneWayTab = By.xpath("//select[@class='react-datepicker__year-select']");
-
-    By increaseInfantOneWayTab = By.xpath("/html[1]/body[1]/div[6]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[4]/div[2]/button[2]");
-
+    By increaseInfantOneWayTab = By.xpath("//body[1]/div[7]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[4]/div[2]/button[2]");
     By cabinClassBusinessOneWayTab = By.xpath("//span[normalize-space()='Business']");
     By searchFlightButtonOneWayTab = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained submit-btn fw-600 fz20 MuiButton-containedPrimary']");
+    By bookButtonOneWayTab = By.xpath("//div[3]//div[1]//div[2]//div[2]//a[1]");
+
     public void clickProfileIcon() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(profileIcon).click();
 //        profileIcon.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void clickSignInIcon() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(signInIcon).click();
+        driver.findElement(logInIcon).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void eMailLogIn() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(eMail).click();
@@ -59,7 +51,6 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.findElement(eMail).sendKeys("mim@sharetrip.net");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void passWordLogIn() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(passWord).click();
@@ -67,19 +58,16 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.findElement(passWord).sendKeys("vugijugi");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void clickLogInButton() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(logInButton).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
     }
     public void clickOneWayTab() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(28));
         driver.findElement(oneWayTab).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void inputFlyingFromOneWayTab() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(flyingFromOneWayTab).click();
@@ -87,10 +75,7 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.findElement(flyingFromOneWayTab).sendKeys("DAX");
         WebElement clickable = driver.findElement(flyingFromOneWayTab);
         new Actions(driver).click(clickable).perform();
-//        WebElement clickable = driver.findElement(flyingFromOneWayTab);
-//        new Actions(driver).doubleClick(clickable).perform();
     }
-
     public void inputFlyingToOneWayTab() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(flyingToOneWayTab).click();
@@ -107,7 +92,6 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(setDateOneWayTab).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
     }
     public void passengerNumberOneWayTab() {
         driver.findElement(increaseAdultOneWayTab).click();
@@ -124,7 +108,6 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(increaseInfantOneWayTab).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
     }
     public void cabinClassOneWayTab(){
         driver.findElement(cabinClassBusinessOneWayTab).click();
@@ -133,6 +116,11 @@ public class BookOneWayFlight extends DriverSetUp {
     public void searchFlightOneWayTab(){
         WebElement clickable = driver.findElement(searchFlightButtonOneWayTab);
         new Actions(driver).doubleClick(clickable).perform();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    }
+    public void clickBookButtonOneWayTab(){
+        driver.findElement(bookButtonOneWayTab).click();
+
     }
 
 }
