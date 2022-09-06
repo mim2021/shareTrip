@@ -3,7 +3,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 
@@ -14,8 +17,8 @@ public class BookOneWayFlight extends DriverSetUp {
 
     By profileIcon = By.xpath("//div[@class='image flex-img d-flex align-items-center justify-content-center']");
     By logInIcon = By.xpath("//li[normalize-space()='Log In']");
-    By eMail = By.id("loginEmail");
-    By passWord = By.id("loginPassword");
+    By eMail = By.id("email");
+    By passWord = By.id("password");
     By logInButton = By.xpath("//button[@type='submit']");
     By oneWayTab = By.xpath("//span[normalize-space()='One Way']");
     By flyingFromOneWayTab = By.id("autocompleteundefined");
@@ -31,12 +34,11 @@ public class BookOneWayFlight extends DriverSetUp {
     By increaseInfantOneWayTab = By.xpath("//body[1]/div[7]/div[3]/ul[1]/li[1]/div[1]/div[1]/div[1]/div[4]/div[2]/button[2]");
     By cabinClassBusinessOneWayTab = By.xpath("//span[normalize-space()='Business']");
     By searchFlightButtonOneWayTab = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained submit-btn fw-600 fz20 MuiButton-containedPrimary']");
-    By bookButtonOneWayTab = By.xpath("//div[3]//div[1]//div[2]//div[2]//a[1]");
+    By bookButtonOneWayTab = By.xpath("//a[@href='/flight-payment?searchId=5cab0f90-2dd2-11ed-9b8a-5144a1289c8d&sessionId=65a5bd10-17a9-51e8-8003-88a8a47d4725&sequenceCode=505d0d1b39db59bce343b623778c41952']");
 
     public void clickProfileIcon() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(profileIcon).click();
-//        profileIcon.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
     public void clickSignInIcon() {
@@ -101,7 +103,7 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.findElement(childBirthDateInputOneWayTab).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         Select childBirthMonthDropDownOneWayTab1 = new Select(driver.findElement(childBirthMonthDropDownOneWayTab));
-        childBirthMonthDropDownOneWayTab1.selectByVisibleText("October");
+        childBirthMonthDropDownOneWayTab1.selectByVisibleText("November");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         Select childBirthYearDropDownOneWayTab1 = new Select(driver.findElement(childBirthYearDropDownOneWayTab));
         childBirthYearDropDownOneWayTab1.selectByVisibleText("2016");
@@ -117,10 +119,12 @@ public class BookOneWayFlight extends DriverSetUp {
         WebElement clickable = driver.findElement(searchFlightButtonOneWayTab);
         new Actions(driver).doubleClick(clickable).perform();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
     }
     public void clickBookButtonOneWayTab(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.presenceOfElementLocated(bookButtonOneWayTab));
         driver.findElement(bookButtonOneWayTab).click();
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }
-
 }
