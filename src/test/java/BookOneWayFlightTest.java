@@ -24,15 +24,18 @@ public class BookOneWayFlightTest extends DriverSetUp{
         oneWayFlightBooking.inputFlyingToOneWayTab();
         Thread.sleep(1000);
         oneWayFlightBooking.selectDateOneWayTab();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         oneWayFlightBooking.passengerNumberOneWayTab();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         oneWayFlightBooking.cabinClassOneWayTab();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         oneWayFlightBooking.searchFlightOneWayTab();
-        Thread.sleep(15000);
+        Thread.sleep(1000);
         oneWayFlightBooking.clickBookButtonOneWayTab();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
+        oneWayFlightBooking.selectTitle();
+        Thread.sleep(1000);
+
 
     }
 
