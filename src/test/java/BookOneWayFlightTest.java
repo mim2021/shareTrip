@@ -2,6 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import javax.swing.*;
+import java.time.Duration;
 
 public class BookOneWayFlightTest extends DriverSetUp{
 
@@ -25,18 +26,16 @@ public class BookOneWayFlightTest extends DriverSetUp{
         Thread.sleep(1000);
         oneWayFlightBooking.selectDateOneWayTab();
         Thread.sleep(1000);
-        oneWayFlightBooking.passengerNumberOneWayTab();
-        Thread.sleep(1000);
+//        oneWayFlightBooking.passengerNumberOneWayTab();
+//        Thread.sleep(1000);
         oneWayFlightBooking.cabinClassOneWayTab();
         Thread.sleep(1000);
         oneWayFlightBooking.searchFlightOneWayTab();
         Thread.sleep(1000);
         oneWayFlightBooking.clickBookButtonOneWayTab();
         Thread.sleep(1000);
-        oneWayFlightBooking.selectTitle();
+        oneWayFlightBooking.passenger1Details();
         Thread.sleep(1000);
-
-
     }
 
 
