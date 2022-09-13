@@ -1,25 +1,19 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
-public class LogIn extends DriverSetUp {
-    public LogIn(WebDriver driver) {
+public class LogInLogOut extends DriverSetUp {
+    public LogInLogOut(WebDriver driver) {
         this.driver = driver;
     }
 
     By profileIcon = By.xpath("//div[@class='image flex-img d-flex align-items-center justify-content-center']");
-    By signInIcon = By.xpath("//li[contains(text(),'Sign In')]");
-    By eMail = By.id("loginEmail");
-    By passWord = By.id("loginPassword");
-    By logInButton = By.xpath("//button[@type='submit']");
-    By oneWayTab = By.xpath("//span[normalize-space()='One Way']");
-    By flyingFromOneWayTab = By.id("autocompleteundefined");
-    By flyingToOneWayTab = By.xpath("//input[@class='form-control autocompleteyourdestination']");
-    By selectDate = By.id("date_input");
-
-
+    By logInIcon = By.xpath("//li[normalize-space()='Log In']");
+    By eMail = By.id("email");
+    By passWord = By.id("password");
+    By logInButton = By.xpath("//span[normalize-space()='Log in']");
+    By logOut = By.xpath("//li[normalize-space()='Log Out']");
     public void clickProfileIcon() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(profileIcon).click();
@@ -28,7 +22,7 @@ public class LogIn extends DriverSetUp {
 
     public void clickSignInIcon() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(signInIcon).click();
+        driver.findElement(logInIcon).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
 
@@ -52,35 +46,13 @@ public class LogIn extends DriverSetUp {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(logInButton).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
     }
-    public void clickOneWayTab() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(28));
-        driver.findElement(oneWayTab).click();
+    public void clickLogOut() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+        driver.findElement(profileIcon).click();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
+        driver.findElement(logOut).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
-    public void inputFlyingFromOneWayTab() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(flyingFromOneWayTab).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(flyingFromOneWayTab).sendKeys("DAX", Keys.ENTER);
-    }
-
-    public void inputFlyingToOneWayTab() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(flyingToOneWayTab).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(flyingToOneWayTab).sendKeys("BKK", Keys.ENTER);
-    }
-    public void selectDateOneWayTab(){
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-        driver.findElement(selectDate).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
-    }
-
-
-
 
 }
