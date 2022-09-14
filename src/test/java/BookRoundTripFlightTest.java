@@ -1,7 +1,7 @@
 import org.testng.annotations.Test;
 
 public class BookRoundTripFlightTest extends DriverSetUp{
-    @Test(priority = 0)
+    @Test
     public void flightBookingRoundTrip() throws InterruptedException {
         BookRoundTripFlight roundTripFlightBooking = new BookRoundTripFlight(driver);
         roundTripFlightBooking.clickProfileIconRoundTrip();
@@ -18,5 +18,6 @@ public class BookRoundTripFlightTest extends DriverSetUp{
         roundTripFlightBooking.clickBookButtonRoundTrip();
         roundTripFlightBooking.passenger1DetailsRoundTrip();
         roundTripFlightBooking.confirmBookingRoundTrip();
+        Thread.sleep(5000);
     }
 }
