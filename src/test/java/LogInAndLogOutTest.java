@@ -1,6 +1,5 @@
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-
 public class LogInAndLogOutTest extends DriverSetUp {
     public void  LogInAndLogOutTest(WebDriver driver){
         this.driver=driver;

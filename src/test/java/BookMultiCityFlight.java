@@ -3,7 +3,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.ArrayList;
 
@@ -11,7 +10,6 @@ public class BookMultiCityFlight extends DriverSetUp {
     public BookMultiCityFlight(WebDriver driver){
         this.driver = driver;
     }
-
     By profileIcon = By.xpath("//div[@class='image flex-img d-flex align-items-center justify-content-center']");
     By logInIcon = By.xpath("//li[normalize-space()='Log In']");
     By eMail = By.id("email");
@@ -49,8 +47,6 @@ public class BookMultiCityFlight extends DriverSetUp {
     By clickAgreeCheckbox = By.xpath("//input[@name='checkedB']");
     By payNowButton = By.xpath("//span[normalize-space()='Pay now']");
     By passportNumber = By.xpath("//input[@name='passportNumber']");
-
-
     public void clickProfileIconMultiCity() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(profileIcon).click();
@@ -122,15 +118,12 @@ public class BookMultiCityFlight extends DriverSetUp {
         driver.findElement(setDate1).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void cabinClassMultiCity1(){
         driver.findElement(passengerArea1).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(cabinClassEconomy1).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
-
     public void inputFlyingFromMultiCity2() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         Actions act = new Actions(driver);
@@ -162,12 +155,6 @@ public class BookMultiCityFlight extends DriverSetUp {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
     public void selectDateMultiCity2(){
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-//        driver.findElement(selectDate2).click();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-//        driver.findElement(rightArrow2).click();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(setDate2));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(selectDate2).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
@@ -176,20 +163,10 @@ public class BookMultiCityFlight extends DriverSetUp {
         driver.findElement(setDate2).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-//
-//    public void cabinClassMultiCity2(){
-//        driver.findElement(cabinClassEconomy).click();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-//    }
-
     public void searchFlightButtonMultiCity(){
-//        WebElement clickable = driver.findElement(searchFlightButtonMultiCity);
-//        new Actions(driver).doubleClick(clickable).perform();
-//        clickable.click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(searchFlightButtonMultiCity).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-
     }
     public void clickBookButtonMultiCity(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
@@ -251,8 +228,4 @@ public class BookMultiCityFlight extends DriverSetUp {
         driver.findElement(payNowButton).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
     }
-
-
-
-
 }

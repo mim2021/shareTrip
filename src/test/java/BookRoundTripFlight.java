@@ -3,7 +3,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.ArrayList;
 
@@ -42,21 +41,16 @@ public class BookRoundTripFlight extends DriverSetUp {
     By clickAgreeCheckbox = By.xpath("//input[@name='checkedB']");
     By payNowButton = By.xpath("//span[normalize-space()='Pay now']");
     By passportNumber = By.xpath("//input[@name='passportNumber']");
-
-
-
     public void clickProfileIconRoundTrip() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(profileIcon).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void clickSignInIconRoundTrip() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(logInIcon).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void eMailLogInRoundTrip() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(eMail).click();
@@ -64,7 +58,6 @@ public class BookRoundTripFlight extends DriverSetUp {
         driver.findElement(eMail).sendKeys("csemim18@gmail.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void passWordLogInRoundTrip() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(passWord).click();
@@ -114,16 +107,11 @@ public class BookRoundTripFlight extends DriverSetUp {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.findElement(departDate).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-//        driver.findElement(returnDateField).click();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
-//        Actions act = new Actions(driver);
-//        act.doubleClick(driver.findElement(returnDate)).click();
         driver.findElement(returnDate).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
-
     public void cabinClassRoundTrip(){
         driver.findElement(cabinClassEconomy).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
@@ -144,7 +132,6 @@ public class BookRoundTripFlight extends DriverSetUp {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
         ArrayList<String> currentWindow = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(currentWindow.get(1));
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         wait.until(ExpectedConditions.presenceOfElementLocated(titleField));

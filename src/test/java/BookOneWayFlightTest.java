@@ -1,7 +1,5 @@
 import org.testng.annotations.Test;
-
 public class BookOneWayFlightTest extends DriverSetUp {
-
     @Test
     public void flightBookingOneWay() throws InterruptedException {
         BookOneWayFlight oneWayFlightBooking = new BookOneWayFlight(driver);

@@ -1,15 +1,10 @@
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.ArrayList;
-
-
-
 public class BookOneWayFlight extends DriverSetUp {
     public  BookOneWayFlight(WebDriver driver) {
         this.driver = driver;
@@ -152,7 +147,6 @@ public class BookOneWayFlight extends DriverSetUp {
         driver.findElement(bookButton).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
     }
-
     public void passenger1DetailsOneWay() {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
         ArrayList<String> currentWindow = new ArrayList<String>(driver.getWindowHandles());
